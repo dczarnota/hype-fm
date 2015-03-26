@@ -1,5 +1,5 @@
 <header ng-include="'components/navbar/navbar.html'"></header>
-<div ng-controller="MainCtrl">
+<section ng-controller="MainCtrl" class="hype-list">
 
     <div layout="row" layout-fill>
       <md-toolbar>
@@ -30,15 +30,15 @@
       </md-content>
     </div>
 
-</div>
+</section>
 
 <footer class="footer-custom">
-  <md-toolbar layout="row">
-    <div flex="50" class="footer-custom-1">
-      <p1 layout-align="left">developed by <a href="https://github.com/dczarnota">dominic czarnota</a></p1>
+  <section layout="row">
+    <div layout="row" flex="50" layout-align="start end" class="footer-custom-1">
+      <p1>developed by <a href="https://github.com/dczarnota">dominic czarnota</a></p1>
     </div>
-    <div flex="50" class="footer-custom-2">
+    <div layout="row" flex="50" layout-align="end end" class="footer-custom-2">
       <p2>made with ♥ using <a href="http://www.last.fm/api">last.fm</a></p2>
     </div>
-  </md-toolbar>
+  </section>
 </footer>
