@@ -4,9 +4,7 @@ angular.module('hypeFm')
   .factory('HypedTracks', function($http, $cacheFactory){
     var HypedTracksFactory = {
       musicInfo: {
-        artists: [],
-        titles: [],
-        percentChanges: []
+        hypeInfo: []
       },
       getHypedTracks: function(){
         var url = 'http://ws.audioscrobbler.com/2.0/?method=chart.gethypedtracks&api_key=eb8e795d4ad0ecfe76dc84f885983afc&format=json';
@@ -14,9 +12,7 @@ angular.module('hypeFm')
         return $http.get(url, { cache: true })
           .success(function(data){
             angular.forEach(data.tracks.track, function(value){
-              HypedTracksFactory.musicInfo.artists.push(value.artist.name);
-              HypedTracksFactory.musicInfo.titles.push(value.name);
-              HypedTracksFactory.musicInfo.percentChanges.push(value.percentagechange);
+              HypedTracksFactory.musicInfo.hypeInfo.push([value.artist.name, value.name, value.percentagechange]);
             });
           })
           .catch(function(error){

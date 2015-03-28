@@ -1,7 +1,15 @@
-<div class="md-tile-content">
-  <h3>{{ artist }}</h3>
-  <h4>{{ title }}</h4>
-  <p>
-    + {{ percentageChange }} %
-  </p>
-</div>
+<md-item ng-repeat="item in hypeInfo">
+  <md-item-content>
+    <div class="md-tile-left">
+      <img>
+    </div>
+    <div class="md-tile-content">
+      <h3>{{ item[0] }}</h3>
+      <h4>{{ item[1] }}</h4>
+      <p>
+        + {{ item[2] }} %
+      </p>
+    </div>
+  </md-item-content>
+  <md-divider ng-if="!$last"></md-divider>
+</md-item>
