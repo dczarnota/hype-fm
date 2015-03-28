@@ -1,4 +1,4 @@
-<md-item ng-repeat="item in hypeInfo">
+<md-item ng-repeat="item in hypeInfo | limitTo:50">
   <md-item-content>
     <div class="md-tile-left">
       <a href="{{ item[3] }}" target="_blank"><img src="assets/images/play.png"></a>
