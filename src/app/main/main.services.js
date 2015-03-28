@@ -12,7 +12,7 @@ angular.module('hypeFm')
         return $http.get(url, { cache: true })
           .success(function(data){
             angular.forEach(data.tracks.track, function(value){
-              HypedTracksFactory.musicInfo.hypeInfo.push([value.artist.name, value.name, value.percentagechange]);
+              HypedTracksFactory.musicInfo.hypeInfo.push([value.artist.name, value.name, value.percentagechange, value.url]);
             });
           })
           .catch(function(error){
